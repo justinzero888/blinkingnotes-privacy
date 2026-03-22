@@ -16,10 +16,11 @@
     }
     .container { max-width: 760px; margin: 0 auto; }
     h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .subtitle { font-size: 1.3rem; font-weight: 400; margin-top: 0.25rem; margin-bottom: 0.5rem; }
     .meta { color: #555; font-size: 0.9rem; margin-bottom: 2rem; }
     .meta p { margin: 0.1rem 0; }
-    hr { border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0; }
-    h2 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+    hr { border: none; border-top: 2px solid #1a1a1a; margin: 2rem 0; }
+    h2 { font-size: 1rem; font-weight: 700; letter-spacing: 0.03em; margin: 2rem 0 0.75rem; }
     p { margin: 0.75rem 0; }
     ul { margin: 0.75rem 0 0.75rem 1.5rem; }
     li { margin: 0.3rem 0; }
@@ -37,111 +38,219 @@
     a { color: #2563eb; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .footer { margin-top: 3rem; font-size: 0.85rem; color: #777; }
+    .lang-toggle { margin-bottom: 1.5rem; }
+    .lang-toggle button {
+      padding: 0.3rem 0.8rem; margin-right: 0.5rem; cursor: pointer;
+      border: 1px solid #ccc; border-radius: 4px; background: #f5f5f5;
+      font-size: 0.9rem;
+    }
+    .lang-toggle button.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+    #content-zh { display: none; }
   </style>
 </head>
 <body>
 <div class="container">
 
-  <h1>Privacy Policy</h1>
-  <h1 style="font-weight:400; font-size:1.3rem; margin-top:0.25rem;">Blinking &nbsp;·&nbsp; 记忆闪烁</h1>
-  <div class="meta">
-    <p><strong>Effective Date:</strong> March 21, 2026</p>
-    <p><strong>Developer:</strong> Blinking App</p>
+  <div class="lang-toggle">
+    <button class="active" onclick="showLang('en', this)">English</button>
+    <button onclick="showLang('zh', this)">中文</button>
   </div>
 
-  <hr>
+  <!-- ───── ENGLISH ───── -->
+  <div id="content-en">
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Blinking &nbsp;·&nbsp; 记忆闪烁</p>
+    <div class="meta">
+      <p><strong>Effective Date:</strong> March 21, 2026</p>
+      <p><strong>App Name:</strong> Blinking (记忆闪烁)</p>
+    </div>
 
-  <h2>1. Overview</h2>
-  <p>Blinking (记忆闪烁) is a personal memory and habit-tracking application designed to work entirely on your device. We are committed to protecting your privacy.</p>
-  <div class="highlight">The short version: Blinking does not collect, transmit, or share any personal data. All your data stays on your device.</div>
+    <hr>
 
-  <hr>
+    <h2>1. OVERVIEW</h2>
+    <p>Blinking (记忆闪烁) is a personal memory and habit-tracking application designed to work entirely on your device. We are committed to protecting your privacy.</p>
+    <div class="highlight">The short version: Blinking does not collect, transmit, or share any personal data. All your data stays on your device.</div>
 
-  <h2>2. Information We Do NOT Collect</h2>
-  <p>We do not collect, store, or transmit:</p>
-  <ul>
-    <li>Your name, email address, phone number, or any identity information</li>
-    <li>Location data</li>
-    <li>Device identifiers or advertising IDs</li>
-    <li>Usage analytics or crash reports</li>
-    <li>Any content you create in the app (journal entries, habits, notes, or media)</li>
-  </ul>
-  <p>There are no accounts, no sign-in, and no registration required.</p>
+    <hr>
 
-  <hr>
+    <h2>2. INFORMATION WE DO NOT COLLECT</h2>
+    <p>We do not collect, store, or transmit:</p>
+    <ul>
+      <li>Your name, email address, phone number, or any identity information</li>
+      <li>Location data</li>
+      <li>Device identifiers or advertising IDs</li>
+      <li>Usage analytics or crash reports</li>
+      <li>Any content you create in the app (journal entries, habits, notes, or media)</li>
+    </ul>
+    <p>There are no accounts, no sign-in, and no registration required.</p>
 
-  <h2>3. Data Storage — Local Only</h2>
-  <p>All data you create in Blinking is stored exclusively on your device:</p>
-  <ul>
-    <li><strong>Journal entries, habits, and cards</strong> are stored in a local SQLite database on your device.</li>
-    <li><strong>Media files</strong> (photos attached to entries) are stored in the app's private document directory on your device.</li>
-    <li><strong>App preferences</strong> (theme, language, display settings) are stored in your device's local SharedPreferences storage.</li>
-  </ul>
-  <p>No data is uploaded to any server operated by us.</p>
+    <hr>
 
-  <hr>
+    <h2>3. DATA STORAGE — LOCAL ONLY</h2>
+    <p>All data you create in Blinking is stored exclusively on your device:</p>
+    <ul>
+      <li>Journal entries, habits, and cards are stored in a local SQLite database on your device.</li>
+      <li>Media files (photos attached to entries) are stored in the app's private document directory.</li>
+      <li>App preferences (theme, language, settings) are stored in your device's local storage.</li>
+    </ul>
+    <p>No data is uploaded to any server operated by us.</p>
 
-  <h2>4. Internet Connectivity</h2>
-  <p>Blinking is designed to be <strong>fully functional without an internet connection</strong>. All core features — journaling, habit tracking, card creation, memory jars, and statistics — work entirely offline.</p>
-  <p>The app does not require internet access to function.</p>
+    <hr>
 
-  <hr>
+    <h2>4. INTERNET CONNECTIVITY</h2>
+    <p>Blinking is designed to be fully functional without an internet connection. All core features — journaling, habit tracking, card creation, memory jars, and statistics — work entirely offline.</p>
+    <p>The app does not require internet access to function.</p>
 
-  <h2>5. AI Assistant Feature (Optional)</h2>
-  <p>Blinking includes an optional AI Assistant feature. This feature is <strong>disabled by default</strong> and only becomes active if you choose to configure it.</p>
-  <p><strong>To use the AI Assistant, you must provide your own API key</strong> from a supported third-party AI provider (such as OpenAI, Anthropic, Google, or OpenRouter).</p>
-  <p><strong>Important disclosures regarding the AI feature:</strong></p>
-  <ul>
-    <li>When you send a message to the AI Assistant, that message (and any journal entries you have chosen to include as context) is transmitted to the third-party AI provider using the API key you supplied.</li>
-    <li><strong>Your data is sent directly from your device to the AI provider's servers.</strong> Blinking does not act as an intermediary and does not see or store this data.</li>
-    <li>The third-party AI provider may collect, process, and store the data you send according to their own privacy policies. We strongly recommend reviewing the privacy policy of your chosen AI provider before using this feature.</li>
-    <li>You are solely responsible for the API key you provide. Keep your API key confidential.</li>
-    <li>You can disable the AI feature at any time by removing your API key in Settings.</li>
-  </ul>
-  <p><strong>AI provider privacy policies (for reference):</strong></p>
-  <ul>
-    <li><a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></li>
-    <li><a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic Privacy Policy</a></li>
-    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
-    <li><a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">OpenRouter Privacy Policy</a></li>
-  </ul>
+    <hr>
 
-  <hr>
+    <h2>5. AI ASSISTANT FEATURE (OPTIONAL)</h2>
+    <p>Blinking includes an optional AI Assistant. This feature is disabled by default and only becomes active if you choose to configure it.</p>
+    <p>To use the AI Assistant, you must provide your own API key from a supported third-party AI provider (such as OpenAI, Anthropic, Google, or OpenRouter).</p>
+    <p><strong>Important disclosures:</strong></p>
+    <ul>
+      <li>When you send a message to the AI Assistant, that message (and any journal entries you have chosen to include as context) is transmitted to the third-party AI provider using the API key you supplied.</li>
+      <li>Your data is sent directly from your device to the AI provider's servers. Blinking does not act as an intermediary and does not see or store this data.</li>
+      <li>The third-party AI provider may collect, process, and store the data you send according to their own privacy policies and terms of service. Please review the privacy policy of your chosen AI provider before using this feature.</li>
+      <li>You are solely responsible for the API key you provide. Keep your API key confidential.</li>
+      <li>You can disable the AI feature at any time by removing your API key in Settings.</li>
+    </ul>
 
-  <h2>6. Permissions</h2>
-  <p>Blinking may request the following device permissions:</p>
-  <table>
-    <tr><th>Permission</th><th>Purpose</th></tr>
-    <tr><td>Camera</td><td>To take photos and attach them to journal entries</td></tr>
-    <tr><td>Photo Library / Media Images</td><td>To select existing photos and attach them to journal entries</td></tr>
-  </table>
-  <p>These permissions are requested only when you attempt to use the relevant feature. Blinking does not access your camera or photo library in the background.</p>
+    <hr>
 
-  <hr>
+    <h2>6. PERMISSIONS</h2>
+    <p>Blinking may request the following device permissions:</p>
+    <table>
+      <tr><th>Permission</th><th>Purpose</th></tr>
+      <tr><td>Camera</td><td>To take photos and attach them to journal entries</td></tr>
+      <tr><td>Photo Library / Media Images</td><td>To select existing photos and attach them to entries</td></tr>
+    </table>
+    <p>These permissions are requested only when you attempt to use the relevant feature. Blinking does not access your camera or photo library in the background.</p>
 
-  <h2>7. Data Export and Backup</h2>
-  <p>Blinking provides built-in tools to export your data (ZIP backup). These exports are generated locally on your device and shared using your device's native sharing mechanism. We do not receive copies of your exported data.</p>
+    <hr>
 
-  <hr>
+    <h2>7. DATA EXPORT AND BACKUP</h2>
+    <p>Blinking provides built-in tools to export your data (ZIP backup, JSON, CSV). These exports are generated locally on your device and shared using your device's native sharing mechanism. We do not receive copies of your exported data.</p>
 
-  <h2>8. Children's Privacy</h2>
-  <p>Blinking is not directed at children under the age of 13. We do not knowingly collect any information from children.</p>
+    <hr>
 
-  <hr>
+    <h2>8. CHILDREN'S PRIVACY</h2>
+    <p>Blinking is not directed at children under the age of 13. We do not knowingly collect any information from children.</p>
 
-  <h2>9. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of material changes by updating the effective date above. Continued use of the app after any changes constitutes your acceptance of the updated policy.</p>
+    <hr>
 
-  <hr>
+    <h2>9. CHANGES TO THIS POLICY</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of material changes by updating the effective date. Continued use of the app after any changes constitutes your acceptance of the updated policy.</p>
 
-  <h2>10. Contact</h2>
-  <p>If you have questions about this Privacy Policy, please contact us through the app store listing or the project's public repository.</p>
+    <hr>
+
+    <h2>10. CONTACT</h2>
+    <p>If you have questions about this Privacy Policy, please contact us through the app store listing or the project's public repository.</p>
+  </div>
+
+  <!-- ───── CHINESE ───── -->
+  <div id="content-zh">
+    <h1>隐私政策</h1>
+    <p class="subtitle">Blinking &nbsp;·&nbsp; 记忆闪烁</p>
+    <div class="meta">
+      <p><strong>生效日期：</strong>2026 年 3 月 21 日</p>
+      <p><strong>应用名称：</strong>Blinking（记忆闪烁）</p>
+    </div>
+
+    <hr>
+
+    <h2>1. 概述</h2>
+    <p>Blinking（记忆闪烁）是一款完全在您设备本地运行的个人记忆与习惯追踪应用。我们致力于保护您的隐私。</p>
+    <div class="highlight">简而言之：Blinking 不收集、不传输、不分享任何个人数据。您的所有数据都保存在您的设备上。</div>
+
+    <hr>
+
+    <h2>2. 我们不收集的信息</h2>
+    <p>我们不收集、存储或传输：</p>
+    <ul>
+      <li>您的姓名、电子邮件、电话号码或任何身份信息</li>
+      <li>位置数据</li>
+      <li>设备标识符或广告 ID</li>
+      <li>使用分析数据或崩溃报告</li>
+      <li>您在应用中创建的任何内容（日记、习惯、笔记或媒体文件）</li>
+    </ul>
+    <p>本应用无需账号、无需登录、无需注册。</p>
+
+    <hr>
+
+    <h2>3. 数据存储 — 仅限本地</h2>
+    <p>您在 Blinking 中创建的所有数据均存储在您的设备上：</p>
+    <ul>
+      <li>日记、习惯和卡片存储在设备本地的 SQLite 数据库中。</li>
+      <li>媒体文件（附加到日记的照片）存储在应用的私有文档目录中。</li>
+      <li>应用偏好设置（主题、语言、配置）存储在设备本地存储中。</li>
+    </ul>
+    <p>我们不会将任何数据上传至服务器。</p>
+
+    <hr>
+
+    <h2>4. 网络连接</h2>
+    <p>Blinking 设计为无需网络连接即可完整运行。所有核心功能 — 日记、习惯追踪、卡片制作、记忆罐和统计 — 均可完全离线使用。</p>
+    <p>本应用不需要互联网即可正常运行。</p>
+
+    <hr>
+
+    <h2>5. AI 助手功能（可选）</h2>
+    <p>Blinking 包含一项可选的 AI 助手功能。该功能默认关闭，仅在您主动配置后才会启用。</p>
+    <p>使用 AI 助手需要您提供来自受支持的第三方 AI 服务商（如 OpenAI、Anthropic、Google 或 OpenRouter）的自有 API Key。</p>
+    <p><strong>重要说明：</strong></p>
+    <ul>
+      <li>当您向 AI 助手发送消息时，该消息（以及您选择作为上下文的日记内容）将通过您提供的 API Key 传输至第三方 AI 服务商。</li>
+      <li>您的数据直接从您的设备发送至 AI 服务商的服务器。Blinking 不作为中间方，不查看或存储这些数据。</li>
+      <li>第三方 AI 服务商可能会根据其自身的隐私政策和服务条款收集、处理和存储您发送的数据。使用该功能前，请阅读您所选 AI 服务商的隐私政策。</li>
+      <li>您对自己提供的 API Key 负全责，请妥善保管。</li>
+      <li>您可随时在设置中移除 API Key 以停用 AI 功能。</li>
+    </ul>
+
+    <hr>
+
+    <h2>6. 权限</h2>
+    <p>Blinking 可能请求以下设备权限：</p>
+    <table>
+      <tr><th>权限</th><th>用途</th></tr>
+      <tr><td>相机</td><td>拍摄照片并附加到日记</td></tr>
+      <tr><td>相册 / 媒体图片</td><td>选择已有照片并附加到日记</td></tr>
+    </table>
+    <p>仅在您尝试使用相关功能时才会请求权限。Blinking 不会在后台访问您的相机或相册。</p>
+
+    <hr>
+
+    <h2>7. 数据导出与备份</h2>
+    <p>Blinking 提供内置数据导出工具（ZIP 备份、JSON、CSV）。这些导出文件在您的设备本地生成，通过您设备的原生分享机制进行共享。我们不会收到您导出数据的副本。</p>
+
+    <hr>
+
+    <h2>8. 儿童隐私</h2>
+    <p>Blinking 不面向 13 岁以下儿童。我们不会故意收集儿童的任何信息。</p>
+
+    <hr>
+
+    <h2>9. 本政策的变更</h2>
+    <p>我们可能会不时更新本隐私政策。如有重大变更，我们将通过更新生效日期的方式通知您。在变更后继续使用本应用，即表示您接受更新后的政策。</p>
+
+    <hr>
+
+    <h2>10. 联系我们</h2>
+    <p>如您对本隐私政策有任何疑问，请通过应用商店页面或项目公开仓库联系我们。</p>
+  </div>
 
   <div class="footer">
-    <hr>
     <p>This privacy policy was prepared in compliance with applicable privacy laws and Google Play Store requirements.</p>
   </div>
 
 </div>
+
+<script>
+  function showLang(lang, btn) {
+    document.getElementById('content-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('content-zh').style.display = lang === 'zh' ? '' : 'none';
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
 </body>
 </html>
